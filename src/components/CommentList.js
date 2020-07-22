@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-  
+
 class CommmentList extends Component {
   renderComments() {
     return this.props.comments.map((comment, index) => {
@@ -11,6 +11,7 @@ class CommmentList extends Component {
   render() {
     return (
       <div>
+        <h4>Comment List</h4>
         <ul>{this.renderComments()}</ul>
       </div>
     )
@@ -18,7 +19,7 @@ class CommmentList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { comments: state.comments }
+  return { comments: state.comments }
 }
 
 export default connect(mapStateToProps)(CommmentList)
